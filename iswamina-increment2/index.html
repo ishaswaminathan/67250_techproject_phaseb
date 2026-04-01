@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- lato-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- oswald-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/style.css">
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </a> 
+        <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="views/explore.html">Explore</a>
+    <a href="views/exhibitions.html">Exhibitions</a>
+
+    <div class="button-group">
+        <a href="views/checkout.html" class="cta">Checkout</a>
+        <a href="views/tickets.html" class="cta">Buy Tickets</a>
+    </div>
+</nav>
+    </header>
+
+    <div class="main">
+            <div class="hero">
+                <img src="./static/entrance.png" 
+                    class="hero-img" 
+                    alt="A modern glass-domed museum exterior filled with light and visitors.">
+
+                <div class="hero-content">
+                    <h1>Welcome to MonoMuse</h1>
+                    <a href="views/tickets.html" class="hero-btn">Visit Today</a>
+                </div>
+            </div>
+
+        <div class="intro-text">
+        <p>
+            MonoMuse is a contemporary museum where art, technology, and human imagination collide in extraordinary ways. Here, immersive exhibitions and interactive installations don't just showcase digital innovation—they transform how we create, experience, and understand art itself. Whether you're stepping through our doors for the first time or returning to discover what's new, every visit reveals fresh perspectives on technology's profound influence on culture and everyday life. From cutting-edge displays that challenge perception to hands-on experiences that put creation in your hands, MonoMuse is where curiosity awakens and creativity comes alive.
+        </p>
+        </div>
+    </div>
+
+    <section class="now-on-view">
+    <div class="section-header">
+        <h2>Now On View</h2>
+        <a href="views/exhibitions.html" class="view-all-link">View All <span class="arrow">→</span>
+</a>
+    </div>
+
+    <div class="exhibit-grid">
+        <div class="exhibit-card card-one">
+            <h3>Echoes of Light</h3>
+            <p>
+                Echoes of Light is an immersive installation where motion-tracking sensors transform visitor movement into evolving patterns of color and light...
+            </p>
+        </div>
+
+        <div class="exhibit-card card-two">
+            <h3>Digital Nature</h3>
+            <p>
+                Digital Nature reimagines the natural world through computational design and interactive media. Generative algorithms simulate forests that grow and change in real time...
+            </p>
+        </div>
+
+        <div class="exhibit-card card-three">
+            <h3>Fragments of the Future</h3>
+            <p>
+                Fragments of the Future presents experimental artworks that speculate on how technology may shape tomorrow’s culture through AI, machine learning, and evolving installations...
+            </p>
+        </div>
+    </div>
+</section>
+
+    <footer> 
+        <p>&copy; 2026 MonoMuse. All rights reserved.</p>
+    </footer>
+</body>
+</html>

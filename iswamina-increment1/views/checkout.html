@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Author and SEO meta tags -->
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+</head>
+<body>
+
+    <!-- Header with museum name and navigation -->
+    <header>
+        <h1>MonoMuse</h1>
+        <!-- Navigation links - paths go up one directory for index since this page is in views/ -->
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Buy Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <div class="main">
+
+        <h1>Checkout</h1>
+
+        <p>
+            Complete the form below to reserve your tickets to MonoMuse. After submitting,
+            you will receive confirmation details by email.
+        </p>
+
+        <!-- Ticket purchase form -->
+        <form>
+
+            <!-- Name field (required) -->
+            <p>
+                <label for="name">Name: (required)</label><br>
+                <input type="text" id="name" name="name" required>
+            </p>
+
+            <!-- Email field (required) -->
+            <p>
+                <label for="email">Email: (required)</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <!-- Ticket quantity field (required) -->
+            <p>
+                <label for="quantity">Ticket Quantity: (required)</label><br>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+            </p>
+
+            <!-- Submit button -->
+            <p>
+                <button type="submit">Complete Purchase</button>
+            </p>
+
+        </form>
+
+    </div>
+
+    <!-- Footer with copyright -->
+    <footer>
+        <p>&copy; 2026 MonoMuse. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

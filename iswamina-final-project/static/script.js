@@ -4,7 +4,6 @@
 // - OpenStreetMap (map tiles): https://www.openstreetmap.org
 
 /* ===== EARLY EXERCISES (COMMENTED OUT) =====
-   Practice code from earlier in the course — kept for reference
 
 // Numeric addition
 var x = 5;

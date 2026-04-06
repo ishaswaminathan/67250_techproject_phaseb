@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Lato font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- External JavaScript (deferred) -->
+    <script src="../static/script.js" defer></script>
+    <!-- Author and SEO meta tags -->
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+</head>
+<body onload="addYear()">
+
+    <!-- CSS Grid container wrapping all page content -->
+    <div class="container">
+
+        <!-- Header with logo -->
+        <header class="header">
+            <a href="../index.html">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </a>
+        </header>
+
+        <!-- Navigation bar (separate from header for CSS Grid layout) -->
+        <nav class="nav_bar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+
+            <!-- CTA button group -->
+            <div class="button-group">
+                <a href="checkout.html" class="cta">Checkout</a>
+                <a href="tickets.html" class="cta">Buy Tickets</a>
+            </div>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="main">
+
+            <h1>Checkout</h1>
+
+            <p style="text-align: center; max-width: 600px; margin: 20px auto;">
+                Complete the form below to reserve your tickets to MonoMuse. After submitting,
+                you will receive confirmation details by email.
+            </p>
+
+            <!-- Ticket purchase form -->
+            <form>
+
+                <p style="color: #d32f2f; font-size: 14px; font-style: italic; font-weight: bold; text-align: right; margin-top: 0;">* = required</p>
+
+                <!-- Name field (required) -->
+                <p>
+                    <label for="name">Name: <span style="color: #d32f2f;">*</span></label><br>
+                    <input type="text" id="name" name="name" required>
+                </p>
+
+                <!-- Email field (required) -->
+                <p>
+                    <label for="email">Email: <span style="color: #d32f2f;">*</span></label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <!-- Ticket quantity field (required) -->
+                <p>
+                    <label for="quantity">Ticket Quantity: <span style="color: #d32f2f;">*</span></label><br>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+                </p>
+
+                <!-- Submit button -->
+                <p>
+                    <button type="submit">Complete Purchase</button>
+                </p>
+
+            </form>
+
+        </main>
+
+        <!-- Footer with dynamic copyright year -->
+        <footer class="footer">
+            <p id="copyYear">&copy; MonoMuse. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

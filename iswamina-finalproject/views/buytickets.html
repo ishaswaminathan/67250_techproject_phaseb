@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding must be declared first -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport meta tag for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== EXTERNAL LIBRARIES =====
+        - Google Fonts (Roboto, Oswald, Lato): https://fonts.google.com
+        - jQuery 4.0.0: https://jquery.com
+    ===== -->
+
+    <!-- Google Fonts: Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts: Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet for all page styles -->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Main JavaScript file, deferred so HTML loads before script runs -->
+    <script src="../static/script.js" defer></script>
+
+    <!-- jQuery 4.0.0: used for toggle interactions (https://jquery.com) -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    <!-- Author and SEO meta tags for search engines -->
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+
+    <!-- Page title shown in browser tab -->
+    <title>MonoMuse</title>
+</head>
+
+<!-- addYear() runs on page load to dynamically update the footer copyright year -->
+<body onload="addYear()">
+
+    <!-- CSS Grid container wrapping all page content -->
+    <div class="container">
+
+        <!-- Header with logo linking back to home page -->
+        <header class="header">
+            <a href="../index.html">
+                <!-- MonoMuse logo -->
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </a>
+        </header>
+
+        <!-- Navigation bar with hamburger menu for mobile -->
+        <!-- Uses Flexbox internally; collapses to hamburger on small screens -->
+        <nav class="nav_bar" id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="donation.html">Donate</a>
+
+            <!-- Buy Tickets CTA button, marked active on this page -->
+            <div class="button-group">
+                <a href="buytickets.html" class="cta active">Buy Tickets</a>
+            </div>
+
+            <!-- Hamburger menu icon (visible on small screens), triggers toggleMenu() -->
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                &#9776;
+            </a>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="main">
+
+            <!-- Page heading -->
+            <h1>Buy Tickets</h1>
+
+            <p>Plan your visit to MonoMuse and experience the intersection of art, technology, and imagination!</p>
+            <p><i>Choose the ticket option that best fits your visit.</i></p>
+
+            <!-- Ticket pricing table -->
+            <table>
+                <!-- Table header row -->
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <!-- General Admission row -->
+                <tr>
+                    <td><strong>General Admission</strong></td>
+                    <td>Full access to all current exhibitions and interactive installations.</td>
+                    <td>$18</td>
+                </tr>
+                <!-- Student row -->
+                <tr>
+                    <td><strong>Student</strong></td>
+                    <td>Discounted admission for students with a valid school or university ID.</td>
+                    <td>$18</td>
+                </tr>
+                <!-- Member row -->
+                <tr>
+                    <td><strong>Member</strong></td>
+                    <td>Free admission for MonoMuse annual members with access to special member events.</td>
+                    <td>$18</td>
+                </tr>
+            </table>
+
+            <!-- Spacer before calendar -->
+            <div style="margin-top: 60px;"></div>
+            <p><i>Click a date to check availability.</i></p>
+
+            <!-- Calendar and date status wrapper -->
+            <div class="calendar-wrapper">
+
+                <!-- Monthly calendar table for April 2026 -->
+                <!-- Clicking a day calls selectDate() in script.js -->
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th colspan="7">
+                                <!-- Calendar header with month label and navigation arrows -->
+                                <div class="calendar-title-row">
+                                    <span class="calendar-arrow">&#8249;</span>
+                                    <span>April 2026</span>
+                                    <span class="calendar-arrow">&#8250;</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <!-- Day of week labels -->
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Week 1 -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="cal-day cal-available" onclick="selectDate(1)">1</td>
+                            <td class="cal-day cal-available" onclick="selectDate(2)">2</td>
+                            <td class="cal-day cal-available" onclick="selectDate(3)">3</td>
+                            <td class="cal-day cal-available" onclick="selectDate(4)">4</td>
+                        </tr>
+                        <!-- Week 2 -->
+                        <tr>
+                            <td class="cal-day cal-available" onclick="selectDate(5)">5</td>
+                            <td class="cal-day cal-full" onclick="selectDate(6)">6</td>
+                            <td class="cal-day cal-available" onclick="selectDate(7)">7</td>
+                            <td class="cal-day cal-available" onclick="selectDate(8)">8</td>
+                            <td class="cal-day cal-available" onclick="selectDate(9)">9</td>
+                            <td class="cal-day cal-available" onclick="selectDate(10)">10</td>
+                            <td class="cal-day cal-available" onclick="selectDate(11)">11</td>
+                        </tr>
+                        <!-- Week 3 -->
+                        <tr>
+                            <td class="cal-day cal-full" onclick="selectDate(12)">12</td>
+                            <td class="cal-day cal-full" onclick="selectDate(13)">13</td>
+                            <td class="cal-day cal-available" onclick="selectDate(14)">14</td>
+                            <td class="cal-day cal-available" onclick="selectDate(15)">15</td>
+                            <td class="cal-day cal-available" onclick="selectDate(16)">16</td>
+                            <td class="cal-day cal-available" onclick="selectDate(17)">17</td>
+                            <td class="cal-day cal-available" onclick="selectDate(18)">18</td>
+                        </tr>
+                        <!-- Week 4 -->
+                        <tr>
+                            <td class="cal-day cal-full" onclick="selectDate(19)">19</td>
+                            <td class="cal-day cal-full" onclick="selectDate(20)">20</td>
+                            <td class="cal-day cal-available" onclick="selectDate(21)">21</td>
+                            <td class="cal-day cal-available" onclick="selectDate(22)">22</td>
+                            <td class="cal-day cal-available" onclick="selectDate(23)">23</td>
+                            <td class="cal-day cal-available" onclick="selectDate(24)">24</td>
+                            <td class="cal-day cal-available" onclick="selectDate(25)">25</td>
+                        </tr>
+                        <!-- Week 5 -->
+                        <tr>
+                            <td class="cal-day cal-available" onclick="selectDate(26)">26</td>
+                            <td class="cal-day cal-available" onclick="selectDate(27)">27</td>
+                            <td class="cal-day cal-available" onclick="selectDate(28)">28</td>
+                            <td class="cal-day cal-available" onclick="selectDate(29)">29</td>
+                            <td class="cal-day cal-available" onclick="selectDate(30)">30</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Date status panel: hidden by default, shown when a date is clicked -->
+                <!-- Populated dynamically by selectDate() in script.js -->
+                <div id="dateStatus" class="date-status-hidden">
+                    <h2 id="dateStatusTitle">Loading...</h2>
+                    <p id="dateStatusText"></p>
+                    <!-- Buy Now button: only shown for available dates -->
+                    <button id="dateStatusBtn" class="cta buy-now-btn" style="display: none;">Buy Now</button>
+                </div>
+
+            </div>
+
+            <!-- Purchase form: hidden by default, revealed when Buy Now is clicked -->
+            <!-- showForm() in script.js removes the hidden class to reveal this -->
+            <div id="purchaseForm" class="purchase-form-hidden">
+                <form id="ticketForm" novalidate>
+                    <h2 style="margin-top: 0;">Complete Your Purchase</h2>
+                    <!-- Required field indicator -->
+                    <p style="color: #d32f2f; font-size: 14px; font-style: italic; font-weight: bold; text-align: right; margin-top: 0;">* = required</p>
+
+                    <!-- Selected date: auto-filled by showForm(), read-only -->
+                    <p>
+                        <label for="selectedDate">Selected Date:</label><br>
+                        <input type="text" id="selectedDate" name="selectedDate" readonly>
+                    </p>
+
+                    <!-- Ticket type dropdown: triggers updatePrice() on change -->
+                    <p>
+                        <label for="ticketType">Ticket Type: <span style="color: #d32f2f;">*</span></label><br>
+                        <select id="ticketType" name="ticketType" required onchange="updatePrice()">
+                            <option value="">-- Select a ticket type --</option>
+                            <option value="general">General Admission — $18</option>
+                            <option value="student">Student — $18</option>
+                            <option value="member">Member — $18</option>
+                        </select>
+                        <span class="field-error" id="ticketTypeError"></span>
+                    </p>
+
+                    <!-- Quantity input: triggers updatePrice() on input, max 10 tickets -->
+                    <p>
+                        <label for="quantity">Number of Tickets: <span style="color: #d32f2f;">*</span></label><br>
+                        <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="1–10" required oninput="updatePrice()">
+                        <span class="field-error" id="quantityError"></span>
+                    </p>
+
+                    <!-- Auto-calculated total price: shown/hidden by updatePrice() in script.js -->
+                    <p class="price-display" id="priceDisplay" style="display: none;">
+                        Total: <strong id="totalPrice">$0.00</strong>
+                    </p>
+
+                    <!-- Name field (required) -->
+                    <p>
+                        <label for="name">Name: <span style="color: #d32f2f;">*</span></label><br>
+                        <input type="text" id="name" name="name" placeholder="Full name" required>
+                        <span class="field-error" id="nameError"></span>
+                    </p>
+
+                    <!-- Email field: validated in submitForm() -->
+                    <p>
+                        <label for="email">Email: <span style="color: #d32f2f;">*</span></label><br>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <span class="field-error" id="emailError"></span>
+                    </p>
+
+                    <!-- Zip code: optional, validated as 5 digits if filled in -->
+                    <p>
+                        <label for="zipcode">Zip Code: <span style="color: #888; font-weight: 300; font-style: italic;">(optional)</span></label><br>
+                        <input type="text" id="zipcode" name="zipcode" placeholder="5-digit zip" maxlength="5" pattern="\d{5}">
+                        <span class="field-error" id="zipcodeError"></span>
+                    </p>
+
+                    <!-- Mailing list opt-in checkbox -->
+                    <p class="checkbox-row">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="mailingList" name="mailingList">
+                            Join our mailing list for news &amp; special offers!
+                        </label>
+                    </p>
+
+                    <!-- Submit button: triggers submitForm() which validates and redirects -->
+                    <p>
+                        <button type="button" id="submitBtn" onclick="submitForm()">Place Order</button>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Bottom spacer -->
+            <div style="height: 80px;"></div>
+
+        </main>
+
+        <!-- Site footer with visitor info and dynamic copyright year -->
+        <footer class="footer">
+
+            <!-- Three-column info row: Hours, Location, Contact -->
+            <div class="footer-info">
+
+                <!-- Museum hours of operation -->
+                <div class="footer-section">
+                    <strong>Hours</strong>
+                    <p>Mon – Fri: 9am – 5pm</p>
+                    <p>Sat – Sun: 10am – 6pm</p>
+                </div>
+
+                <!-- Physical museum address -->
+                <div class="footer-section">
+                    <strong>Location</strong>
+                    <p>1212 Smallman St</p>
+                    <p>Pittsburgh, PA 15222</p>
+                </div>
+
+                <!-- Contact phone and email -->
+                <div class="footer-section">
+                    <strong>Contact</strong>
+                    <p>(412) 555-0192</p>
+                    <p>info@monomuse.org</p>
+                </div>
+
+            </div>
+
+            <!-- Copyright year dynamically updated by addYear() in script.js -->
+            <p id="copyYear">&copy; MonoMuse. All rights reserved.</p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>

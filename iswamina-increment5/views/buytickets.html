@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Lato font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- External JavaScript (deferred) -->
+    <script src="../static/script.js" defer></script>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <!-- Author and SEO meta tags -->
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+</head>
+<body onload="addYear()">
+
+    <!-- CSS Grid container wrapping all page content -->
+    <div class="container">
+
+        <!-- Header with logo -->
+        <header class="header">
+            <a href="../index.html">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </a>
+        </header>
+
+        <!-- Navigation bar with hamburger menu for mobile -->
+        <nav class="nav_bar" id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <!-- CTA button group -->
+            <div class="button-group">
+                <a href="buytickets.html" class="cta active">Buy Tickets</a>
+            </div>
+
+            <!-- Hamburger menu icon (visible on small screens) -->
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                &#9776;
+            </a>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="main">
+
+            <h1>Buy Tickets</h1>
+
+            <p>Plan your visit to MonoMuse and experience the intersection of art, technology, and imagination!</p>
+            <p><i>Choose the ticket option that best fits your visit.</i></p>
+
+            <!-- Ticket pricing table -->
+            <table>
+                <!-- Table header row -->
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                <!-- General Admission -->
+                <tr>
+                    <td><strong>General Admission</strong></td>
+                    <td>Full access to all current exhibitions and interactive installations.</td>
+                    <td>$18</td>
+                </tr>
+                <!-- Student -->
+                <tr>
+                    <td><strong>Student</strong></td>
+                    <td>Discounted admission for students with a valid school or university ID.</td>
+                    <td>$10</td>
+                </tr>
+                <!-- Member -->
+                <tr>
+                    <td><strong>Member</strong></td>
+                    <td>Free admission for MonoMuse annual members with access to special member events.</td>
+                    <td>$0</td>
+                </tr>
+            </table>
+
+            <h2 style="margin-top: 60px;"></h2>
+            <p><i>Click a date to check availability.</i></p>
+
+            <!-- Calendar and date status wrapper -->
+            <div class="calendar-wrapper">
+
+                <!-- Monthly calendar table -->
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th colspan="7">
+                                <div class="calendar-title-row">
+                                    <span class="calendar-arrow">&#8249;</span>
+                                    <span>April 2026</span>
+                                    <span class="calendar-arrow">&#8250;</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Week 1 -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="cal-day cal-available" onclick="selectDate(1)">1</td>
+                            <td class="cal-day cal-available" onclick="selectDate(2)">2</td>
+                            <td class="cal-day cal-available" onclick="selectDate(3)">3</td>
+                            <td class="cal-day cal-available" onclick="selectDate(4)">4</td>
+                        </tr>
+                        <!-- Week 2 -->
+                        <tr>
+                            <td class="cal-day cal-available" onclick="selectDate(5)">5</td>
+                            <td class="cal-day cal-full" onclick="selectDate(6)">6</td>
+                            <td class="cal-day cal-available" onclick="selectDate(7)">7</td>
+                            <td class="cal-day cal-available" onclick="selectDate(8)">8</td>
+                            <td class="cal-day cal-available" onclick="selectDate(9)">9</td>
+                            <td class="cal-day cal-available" onclick="selectDate(10)">10</td>
+                            <td class="cal-day cal-available" onclick="selectDate(11)">11</td>
+                        </tr>
+                        <!-- Week 3 -->
+                        <tr>
+                            <td class="cal-day cal-full" onclick="selectDate(12)">12</td>
+                            <td class="cal-day cal-full" onclick="selectDate(13)">13</td>
+                            <td class="cal-day cal-available" onclick="selectDate(14)">14</td>
+                            <td class="cal-day cal-available" onclick="selectDate(15)">15</td>
+                            <td class="cal-day cal-available" onclick="selectDate(16)">16</td>
+                            <td class="cal-day cal-available" onclick="selectDate(17)">17</td>
+                            <td class="cal-day cal-available" onclick="selectDate(18)">18</td>
+                        </tr>
+                        <!-- Week 4 -->
+                        <tr>
+                            <td class="cal-day cal-full" onclick="selectDate(19)">19</td>
+                            <td class="cal-day cal-full" onclick="selectDate(20)">20</td>
+                            <td class="cal-day cal-available" onclick="selectDate(21)">21</td>
+                            <td class="cal-day cal-available" onclick="selectDate(22)">22</td>
+                            <td class="cal-day cal-available" onclick="selectDate(23)">23</td>
+                            <td class="cal-day cal-available" onclick="selectDate(24)">24</td>
+                            <td class="cal-day cal-available" onclick="selectDate(25)">25</td>
+                        </tr>
+                        <!-- Week 5 -->
+                        <tr>
+                            <td class="cal-day cal-available" onclick="selectDate(26)">26</td>
+                            <td class="cal-day cal-available" onclick="selectDate(27)">27</td>
+                            <td class="cal-day cal-available" onclick="selectDate(28)">28</td>
+                            <td class="cal-day cal-available" onclick="selectDate(29)">29</td>
+                            <td class="cal-day cal-available" onclick="selectDate(30)">30</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Date status panel (shown when a date is clicked) -->
+                <div id="dateStatus" class="date-status-hidden">
+                    <h3 id="dateStatusTitle"></h3>
+                    <p id="dateStatusText"></p>
+                    <button id="dateStatusBtn" class="cta buy-now-btn" style="display: none;">Buy Now</button>
+                </div>
+
+            </div>
+
+            <!-- Purchase form (hidden by default, revealed by Buy Now button) -->
+            <div id="purchaseForm" class="purchase-form-hidden">
+                <form id="ticketForm">
+                    <h2 style="margin-top: 0;">Complete Your Purchase</h2>
+                    <p style="color: #d32f2f; font-size: 14px; font-style: italic; font-weight: bold; text-align: right; margin-top: 0;">* = required</p>
+                    <!-- Selected date (read-only) -->
+                    <p>
+                        <label for="selectedDate">Selected Date:</label><br>
+                        <input type="text" id="selectedDate" name="selectedDate" readonly>
+                    </p>
+                    <!-- Name field (required) -->
+                    <p>
+                        <label for="name">Name: <span style="color: #d32f2f;">*</span></label><br>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+                    <!-- Email field (required) -->
+                    <p>
+                        <label for="email">Email: <span style="color: #d32f2f;">*</span></label><br>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <!-- Number of tickets field (required) -->
+                    <p>
+                        <label for="quantity">Number of Tickets: <span style="color: #d32f2f;">*</span></label><br>
+                        <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+                    </p>
+                    <!-- Submit button -->
+                    <p>
+                        <button type="submit" id="submitBtn">Complete Purchase</button>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Bottom spacer -->
+            <div style="height: 80px;"></div>
+
+        </main>
+
+        <!-- Footer with dynamic copyright year -->
+        <footer class="footer">
+            <p id="copyYear">&copy; MonoMuse. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

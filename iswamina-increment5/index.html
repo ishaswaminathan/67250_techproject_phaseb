@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Lato font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <!-- Leaflet JavaScript for map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="./static/style.css">
+    <!-- External JavaScript (deferred) -->
+    <script src="./static/script.js" defer></script>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <!-- Author and SEO meta tags -->
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+</head>
+<body onload="addYear()">
+
+    <!-- CSS Grid container wrapping all page content -->
+    <div class="container">
+
+        <!-- Header with logo -->
+        <header class="header">
+            <a href="index.html">
+                <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </a>
+        </header>
+
+        <!-- Navigation bar with hamburger menu for mobile -->
+        <nav class="nav_bar" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="views/explore.html">Explore</a>
+            <a href="views/exhibitions.html">Exhibitions</a>
+
+            <!-- CTA button group -->
+            <div class="button-group">
+                <a href="views/buytickets.html" class="cta">Buy Tickets</a>
+            </div>
+
+            <!-- Hamburger menu icon (visible on small screens) -->
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                &#9776;
+            </a>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="main">
+            <!-- Hero banner section -->
+            <div class="hero">
+                <img src="./static/entrance.png"
+                    class="hero-img"
+                    alt="A modern glass-domed museum exterior filled with light and visitors.">
+
+                <div class="hero-content">
+                    <!-- Dynamic greeting set by JavaScript based on time of day -->
+                    <h2 id="greeting">Welcome to the MonoMuse Museum</h2>
+                    <h1>Welcome to MonoMuse</h1>
+                    <a href="views/buytickets.html" class="hero-btn">Visit Today</a>
+                </div>
+            </div>
+
+            <!-- Read More / Read Less toggle section (jQuery) -->
+            <div class="intro-text">
+                <p id="shortIntro">
+                    Discover our latest exhibitions, interactive installations, and upcoming events at MonoMuse.
+                </p>
+                <p id="longIntro" style="display: none;">
+                    MonoMuse offers a wide range of experiences for visitors of all ages. From our permanent digital art collections to rotating exhibitions featuring emerging artists and cutting-edge technology, there is always something new to explore. Join us for guided tours, workshops, and special events throughout the year. Whether you are an art enthusiast, a tech lover, or simply curious, MonoMuse has something for everyone.
+                </p>
+                <span id="readMore" class="toggle-btn">Read More</span>
+                <span id="readLess" class="toggle-btn" style="display: none;">Read Less</span>
+            </div>
+
+            <!-- Now On View exhibitions section -->
+            <section class="now-on-view">
+                <div class="section-header">
+                    <h2>Now On View</h2>
+                    <a href="views/exhibitions.html" class="view-all-link">View All <span class="arrow">→</span></a>
+                </div>
+
+                <!-- Exhibition cards grid -->
+                <div class="exhibit-grid">
+                    <!-- Exhibition 1: Echoes of Light -->
+                    <div class="exhibit-card card-one">
+                        <h3>Echoes of Light</h3>
+                        <p>
+                            Echoes of Light is an immersive installation where motion-tracking sensors transform visitor movement into evolving patterns of color and light...
+                        </p>
+                    </div>
+
+                    <!-- Exhibition 2: Digital Nature -->
+                    <div class="exhibit-card card-two">
+                        <h3>Digital Nature</h3>
+                        <p>
+                            Digital Nature reimagines the natural world through computational design and interactive media. Generative algorithms simulate forests that grow and change in real time...
+                        </p>
+                    </div>
+
+                    <!-- Exhibition 3: Fragments of the Future -->
+                    <div class="exhibit-card card-three">
+                        <h3>Fragments of the Future</h3>
+                        <p>
+                            Fragments of the Future presents experimental artworks that speculate on how technology may shape tomorrow's culture through AI, machine learning, and evolving installations...
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leaflet map section -->
+            <h2>Visit Us</h2>
+            <div id="map"></div>
+
+        </main>
+
+        <!-- Footer with dynamic copyright year -->
+        <footer class="footer">
+            <p id="copyYear">&copy; MonoMuse. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

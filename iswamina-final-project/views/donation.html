@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding must be declared first -->
+    <meta charset="UTF-8">
+
+    <!-- Viewport meta tag for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== EXTERNAL LIBRARIES =====
+        - Google Fonts (Roboto, Oswald, Lato): https://fonts.google.com
+        - jQuery 4.0.0: https://jquery.com
+    ===== -->
+
+    <!-- Google Fonts: Lato, Oswald, Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet for all page styles -->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Main JavaScript file, deferred so HTML loads before script runs -->
+    <script src="../static/script.js" defer></script>
+
+    <!-- jQuery 4.0.0: used for toggle interactions (https://jquery.com) -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    <!-- Author and SEO meta tags for search engines -->
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+
+    <!-- Page title shown in browser tab -->
+    <title>MonoMuse — Donate</title>
+</head>
+
+<!-- addYear() runs on page load to update the footer copyright year -->
+<body onload="addYear()">
+
+    <!-- CSS Grid container wrapping all page content -->
+    <div class="container">
+
+        <!-- Header with logo linking back to home page -->
+        <header class="header">
+            <a href="../index.html">
+                <!-- MonoMuse logo -->
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </a>
+        </header>
+
+        <!-- Navigation bar with hamburger menu for mobile -->
+        <nav class="nav_bar" id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="donation.html">Donate</a>
+
+            <!-- Buy Tickets CTA button -->
+            <div class="button-group">
+                <a href="buytickets.html" class="cta">Buy Tickets</a>
+            </div>
+
+            <!-- Hamburger menu icon (visible on small screens), triggers toggleMenu() -->
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                &#9776;
+            </a>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="main">
+
+            <!-- Page heading -->
+            <h1>Support MonoMuse</h1>
+            <p>Your support helps us keep art and technology accessible to everyone. Choose a membership tier or make a one-time donation below.</p>
+
+            <!-- Membership tiers section -->
+            <h2>Membership Tiers</h2>
+            <p>Subscribe to donations once a year, twice a year, or monthly for some special perks as a token of our appreciation!</p>
+
+            <!-- Flexbox grid of three membership tier cards -->
+            <div class="exhibit-grid" style="padding: 0 40px; margin-top: 20px;">
+
+                <!-- Gold tier: donates once a year -->
+                <div class="exhibit-card card-one">
+                    <h3>Gold</h3>
+                    <p><strong>Once a Year</strong></p>
+                    <p style="margin-top: 10px;">10% off in the gift shop on each visit.</p>
+                </div>
+
+                <!-- Silver tier: donates every 6 months -->
+                <div class="exhibit-card card-two">
+                    <h3>Silver</h3>
+                    <p><strong>Twice a Year</strong></p>
+                    <p style="margin-top: 10px;">All Gold benefits plus a free guest pass and early access to new exhibitions.</p>
+                </div>
+
+                <!-- Platinum tier: donates once a month -->
+                <div class="exhibit-card card-three">
+                    <h3>Platinum</h3>
+                    <p><strong>Once a Month</strong></p>
+                    <p style="margin-top: 10px;">All Silver benefits plus behind-the-scenes tours, recognition in our annual report, and a complimentary MonoMuse tote bag.</p>
+                </div>
+
+            </div>
+
+            <!-- Donation form -->
+            <!-- Validated and submitted by submitDonation() in script.js -->
+            <form id="donationForm" novalidate>
+                <h2 style="margin-top: 0;">Donate Today</h2>
+
+                <!-- Required field indicator -->
+                <p style="color: #d32f2f; font-size: 14px; font-style: italic; font-weight: bold; text-align: right; margin-top: 0;">* = required</p>
+
+                <!-- Donor name (required) -->
+                <p>
+                    <label for="donorName">Name: <span style="color: #d32f2f;">*</span></label><br>
+                    <input type="text" id="donorName" name="donorName" placeholder="Full name">
+                </p>
+
+                <!-- Donor email (required) -->
+                <p>
+                    <label for="donorEmail">Email: <span style="color: #d32f2f;">*</span></label><br>
+                    <input type="email" id="donorEmail" name="donorEmail" placeholder="you@example.com">
+                </p>
+
+                <!-- Contribution type dropdown (required) -->
+                <p>
+                    <label for="donationType">Contribution Type: <span style="color: #d32f2f;">*</span></label><br>
+                    <select id="donationType" name="donationType" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="One-Time Donation">One-Time Donation</option>
+                        <option value="Gold Membership (Yearly)">Gold Membership — Once a Year</option>
+                        <option value="Silver Membership (Every 6 Months)">Silver Membership — Every 6 Months</option>
+                        <option value="Platinum Membership (Monthly)">Platinum Membership — Once a Month</option>
+                    </select>
+                </p>
+
+                <!-- Donation amount (required, must be a positive number) -->
+                <p>
+                    <label for="donationAmount">Amount ($): <span style="color: #d32f2f;">*</span></label><br>
+                    <input type="number" id="donationAmount" name="donationAmount" min="1" placeholder="Enter amount">
+                </p>
+
+                <!-- Submit button: triggers submitDonation() in script.js -->
+                <p>
+                    <button type="button" onclick="submitDonation()">Donate Now</button>
+                </p>
+            </form>
+
+            <!-- Bottom spacer -->
+            <div style="height: 80px;"></div>
+
+        </main>
+
+        <!-- Site footer with visitor info and dynamic copyright year -->
+        <footer class="footer">
+
+            <!-- Three-column info row: Hours, Location, Contact -->
+            <div class="footer-info">
+
+                <!-- Museum hours of operation -->
+                <div class="footer-section">
+                    <strong>Hours</strong>
+                    <p>Mon – Fri: 9am – 5pm</p>
+                    <p>Sat – Sun: 10am – 6pm</p>
+                </div>
+
+                <!-- Physical museum address -->
+                <div class="footer-section">
+                    <strong>Location</strong>
+                    <p>1212 Smallman St</p>
+                    <p>Pittsburgh, PA 15222</p>
+                </div>
+
+                <!-- Contact phone and email -->
+                <div class="footer-section">
+                    <strong>Contact</strong>
+                    <p>(412) 555-0192</p>
+                    <p>info@monomuse.org</p>
+                </div>
+
+            </div>
+
+            <!-- Copyright year dynamically updated by addYear() in script.js -->
+            <p id="copyYear">&copy; MonoMuse. All rights reserved.</p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>

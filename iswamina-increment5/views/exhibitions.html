@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Lato font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- External JavaScript (deferred) -->
+    <script src="../static/script.js" defer></script>
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <!-- Author and SEO meta tags -->
+    <meta name="author" content="Isha Swaminathan">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+</head>
+<body onload="addYear()">
+
+    <!-- CSS Grid container wrapping all page content -->
+    <div class="container">
+
+        <!-- Header with logo -->
+        <header class="header">
+            <a href="../index.html">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            </a>
+        </header>
+
+        <!-- Navigation bar with hamburger menu for mobile -->
+        <nav class="nav_bar" id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+
+            <!-- CTA button group -->
+            <div class="button-group">
+                <a href="buytickets.html" class="cta">Buy Tickets</a>
+            </div>
+
+            <!-- Hamburger menu icon (visible on small screens) -->
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                &#9776;
+            </a>
+        </nav>
+
+        <!-- Main content area -->
+        <main class="main">
+
+            <h1>Exhibitions</h1>
+
+            <!-- Introductory paragraph about exhibitions -->
+            <div class="exhibitions-intro">
+                <p><em>
+                    Transcending the boundaries of art, science, and imagination, MonoMuse exhibitions
+                    invite visitors to explore how technology is reshaping creative expression. Through
+                    immersive environments, experimental media, and interactive installations, each
+                    exhibition offers a new perspective on the evolving relationship between humans
+                    and the digital world.
+                </em></p>
+            </div>
+
+            <!-- Current exhibitions section -->
+            <div class="current-exhibitions">
+                <h2>Current Exhibitions</h2>
+
+                <!-- Exhibition cards grid -->
+                <div class="exhibition-grid">
+
+                    <!-- Exhibition 1: Echoes of Light -->
+                    <div class="exhibition-box box-one">
+                        <h3>Echoes of Light</h3>
+                        <p>
+                            Echoes of Light is an immersive installation where motion-tracking sensors transform
+                            visitor movement into evolving patterns of color and light. As guests move through
+                            the space, beams of light ripple across the gallery walls, creating a constantly
+                            changing visual landscape. The exhibition explores how human presence can shape
+                            digital environments and blur the line between observer and creator.
+                        </p>
+                    </div>
+
+                    <!-- Exhibition 2: Digital Nature -->
+                    <div class="exhibition-box box-two">
+                        <h3>Digital Nature</h3>
+                        <p>
+                            Digital Nature reimagines the natural world through computational design and
+                            interactive media. Generative algorithms simulate forests that grow and change in
+                            real time, while projected oceans respond to sound and motion. By blending natural
+                            forms with digital technology, the exhibition invites visitors to reflect on how
+                            innovation can deepen our understanding of the environment.
+                        </p>
+                    </div>
+
+                    <!-- Exhibition 3: Fragments of the Future -->
+                    <div class="exhibition-box box-three">
+                        <h3>Fragments of the Future</h3>
+                        <p>
+                            Fragments of the Future presents experimental artworks that speculate on how
+                            technology may shape tomorrow's culture. Artists use artificial intelligence,
+                            machine-learning tools, and data visualization to create installations that
+                            explore identity, memory, and human creativity in a digital age. Visitors encounter
+                            works that continuously evolve as the systems behind them learn and adapt.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Upcoming exhibitions section -->
+            <div class="upcoming-exhibitions">
+                <h2>Upcoming Exhibitions</h2>
+
+                <div class="upcoming-box">
+                    <p>
+                        MonoMuse continues to push the boundaries of creative technology with several
+                        exciting exhibitions arriving soon. <strong>Light & Code</strong> (Spring 2026)
+                        will explore how artists use programming and projection mapping to create living
+                        digital artworks that respond to visitor interaction. Later in Fall 2026,
+                        <strong>Human + Machine</strong> will examine the collaboration between artists
+                        and artificial intelligence through AI-generated paintings, music, and interactive
+                        creative systems.
+                    </p>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer with dynamic copyright year -->
+        <footer class="footer">
+            <p id="copyYear">&copy; MonoMuse. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
